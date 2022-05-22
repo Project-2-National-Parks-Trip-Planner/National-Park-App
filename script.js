@@ -9,7 +9,7 @@ parkApp.init = () => {
     //calling the method which makes the request to the API
     parkApp.getData();
 
-    // parkApp.handleOnChangeSelect();
+    
   }
 
 //save relevant API info 
@@ -49,17 +49,6 @@ parkApp.getData = () => {
 }
 
 
-
-// parkApp.handleOnChangeSelect = function() {
-//   const select = document.getElementById("chosenState");
-  
-//   parkApp.selectedState = select.value;
-
-//   console.log('onChangeEvent ', parkApp.selectedState);
-
-//   return parkApp.selectedState;
-  
-// }
 
 parkApp.state = '';
 parkApp.displayStates = function(data) {
