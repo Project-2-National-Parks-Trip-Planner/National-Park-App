@@ -8,11 +8,14 @@ const parkApp = {};
 parkApp.init = () => {
     //calling the method which makes the request to the API
     parkApp.getData();
+
+    // parkApp.handleOnChangeSelect();
   }
 
 //save relevant API info 
 parkApp.apiUrl = "https://developer.nps.gov/api/v1/parks"
 parkApp.apiKey = "sIbVeWuJQGDB0ggBcZ6WYl17B68jGWLccRhQajRG"
+
 
 
 // create a method (AKA function on the app object) which requests information from the API
@@ -26,6 +29,8 @@ parkApp.getData = () => {
     api_key: parkApp.apiKey,
     limit: 466
   })
+ 
+  
 
   // using the fetch API to make a request to the NPS Parks API endpoint
   // pass in new URL featuring params provided by the URLSearchParams constructor
@@ -39,6 +44,7 @@ parkApp.getData = () => {
     .then((jsonResponse) => {
     console.log(jsonResponse);
     })
+
 }
 
 // parkApp.activity = '';
@@ -56,10 +62,13 @@ parkApp.getData = () => {
 
 
 // //call the init method to kickstart our app
-// parkApp.init();
+parkApp.init();
 
 
 
 
+
+
+// console.log(parkApp);
 
 
