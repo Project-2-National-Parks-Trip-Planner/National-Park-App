@@ -23,10 +23,11 @@ parkApp.getData = () => {
   
   url.search = new URLSearchParams({
     // pass in our API key as a parameter
-    api_key: parkApp.apiKey
+    api_key: parkApp.apiKey,
+    limit: 466
   })
 
-  // using the fetch API to make a request to the NPS Parks API photos endpoint
+  // using the fetch API to make a request to the NPS Parks API endpoint
   // pass in new URL featuring params provided by the URLSearchParams constructor
   fetch(url)
     .then((response) => {
@@ -36,10 +37,29 @@ parkApp.getData = () => {
     })
     //parse the JSON Promise response and log out readable data (AKA data in JSON format)
     .then((jsonResponse) => {
-      console.log(jsonResponse);
+    console.log(jsonResponse);
     })
 }
 
-//call the init method to kickstart our app
-parkApp.init();
+// parkApp.activity = '';
+
+// parkApp.filterByActivity = () => {
+
+// }
+
+// const checkboxActivities = document.querySelectorAll('input[name="activity"]');
+// parkApp.selectedActivity = () => {
+//     if (checkboxActivities === checked)
+//     return true;
+// }
+
+
+
+// //call the init method to kickstart our app
+// parkApp.init();
+
+
+
+
+
 
