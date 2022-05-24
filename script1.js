@@ -24,28 +24,43 @@ parkApp.getParks = function () {
         return results.json();
     }).then(parkData =>{
         const object = parkData.data;
+        console.log(object);
 
         parkApp.parkActivities(object);
+        parkApp.openingHours(object);
     })
 }
 //RETURNS ARRAY OF 466 PARKS 
 
 parkApp.parkActivities = function (object){
-    const activities = object.map(function(activities){
-        return object[''].activities;
+    const parkActivities = object.map( ({activities}) => {
+        return activities;
     })
-    console.log(activities);
+    
+    console.log(parkActivities);
+}
+
+//RETURNS ACTIVITIES FOR EACH PARK AS NEW ARRAY 
+
+
+parkApp.openingHours = function (object) {
+    const openingHours = object.map( ({operatingHours}) => {
+        return operatingHours;
+    });
+    const daysOpen = openingHours.map( () => {
+        return openingHours[0];
+    });
+    const weekdays = daysOpen.map( () => {
+        return daysOpen[0];
+    })
+    const hours = weekdays.map( ({standardHours}) => {
+        return standardHours;
+    })
+
+    console.log(hours);
 }
 
 
-// parkApp.displayRelevantParks = (dataFromApi) => {
-//     const ul = document.querySelector('ul');
-//     const relevantActivity = dataFromApi.filter ((datum) => {
-//         return datum[0].activity;
-//     })
-//     console.log(relevantActivity);
-// }
 
 parkApp.init();
 
-console.log(parkApp);
