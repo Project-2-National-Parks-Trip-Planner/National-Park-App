@@ -16,7 +16,7 @@
 
     <main>
         <h2>Tell us about your trip preferences:</h2>
-        <form>
+        <form id="form">
             <label for="chosenState">Which state would you like the park to be in?</label>
             <select name="state" id="chosenState">
                 <option value="AL">Alabama</option>
@@ -74,34 +74,19 @@
                 <option value="WY">Wyoming</option>
             </select>
 
-            <fieldset>
-                <legend>What is your daily park budget?</legend>
+            <fieldset id="budget">
+                <legend>Are you willing to pay to enter the park?</legend>
 
-                <label for="leastExpensive">$</label>
-                <input type="radio" name="price" value="cheap" id="leastExpensive">
+                <label for="yes">Yes</label>
+                <input type="radio" name="cost" value="0.01" id="yes">
 
-                <label for="mediumExpensive">$$</label>
-                <input type="radio" name="price" value="medium" id="mediumExpensive">
+                <label for="No">No</label>
+                <input type="radio" name="cost" value="0.00" id="no">
 
-                <label for="mostExpensive">$$$</label>
-                <input type="radio" name="price" value="expensive" id="mostExpensive">
             </fieldset>
 
-
-                <fieldset>
-                    <legend>What is your daily park budget?</legend>
-                  
-                    <label for="leastExpensive">$</label>
-                    <input type="radio" name="price" value="cheap" id="leastExpensive">
-                  
-                    <label for="mediumExpensive">$$</label>
-                    <input type="radio" name="price" value="medium" id="mediumExpensive">
-                  
-                    <label for="mostExpensive">$$$</label>
-                    <input type="radio" name="price" value="expensive" id="mostExpensive"> 
-                  </fieldset>
             
-                  <fieldset>
+                  <fieldset id="activity">
                     <legend>Would you like to do any of the following activities?</legend>
                   
                     <label for="hiking">Hiking</label>
@@ -123,25 +108,11 @@
                     <input type="checkbox" name="activity" value="wildlife" id="wildlife">
                   </fieldset>
 
-                <label for="chosenDay">Which day of the week would you like to visit?</label>
-                <select name="day" id="chosenDay">
-                    <option value="monday">Monday</option>
-                    <option value="tuesday">Tuesday</option>
-                    <option value="wednesday">Wednesday</option>
-                    <option value="thursday">Thursday</option>
-                    <option value="friday">Friday</option>
-                    <option value="saturday">Saturday</option>
-                    <option value="sunday">Sunday</option>
-                </select>
-
-                <ul>
-                    
-                </ul>
-
-
-            
+                <button type="submit" value="submit" id="submit">Submit</button>
 
         </form>
+
+        <div class="wrapper" id="parksInfo"></div>
     </main>
 
     <script src="./script1.js"></script>
