@@ -23,15 +23,19 @@ parkApp.getParks = function () {
     .then(results => {
         return results.json();
     }).then(parkData =>{
-        // console.log(parkData);
-        // console.log(parkData.data);
-        // parkApp.displayRelevantParks(parkData);
-        parkApp.parkData = parkData;
+        const object = parkData.data;
+
+        parkApp.parkActivities(object);
     })
 }
 //RETURNS ARRAY OF 466 PARKS 
 
-console.log(getParks);
+parkApp.parkActivities = function (object){
+    const activities = object.map(function(activities){
+        return object[''].activities;
+    })
+    console.log(activities);
+}
 
 
 // parkApp.displayRelevantParks = (dataFromApi) => {
