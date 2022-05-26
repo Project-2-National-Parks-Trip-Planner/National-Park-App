@@ -16,7 +16,7 @@
 
     <main>
         <h2>Tell us about your trip preferences:</h2>
-        <form>
+        <form id="form">
             <label for="chosenState">Which state would you like the park to be in?</label>
             <select name="state" id="chosenState">
                 <option value="AL">Alabama</option>
@@ -78,17 +78,15 @@
                 <legend>What is your daily park budget?</legend>
 
                 <label for="leastExpensive">$</label>
-                <input type="radio" name="price" value="cheap" id="leastExpensive">
+                <input type="radio" class="cost" name="price" value="cheap" id="leastExpensive">
 
                 <label for="mediumExpensive">$$</label>
-                <input type="radio" name="price" value="medium" id="mediumExpensive">
+                <input type="radio" class="cost" name="price" value="medium" id="mediumExpensive">
 
                 <label for="mostExpensive">$$$</label>
-                <input type="radio" name="price" value="expensive" id="mostExpensive">
+                <input type="radio" class="cost" name="price" value="expensive" id="mostExpensive">
             </fieldset>
-
-
-
+            <button type="submit" id="submit">Submit</button>
         </form>
     </main>
 
