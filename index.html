@@ -78,15 +78,26 @@
                 <legend>Are you willing to pay to enter the park?</legend>
 
                 <label for="yes">Yes</label>
-                <input type="radio" name="cost" value="0.01" id="yes">
+                <input type="radio" name="cost" value="" id="yes">
 
                 <label for="No">No</label>
                 <input type="radio" name="cost" value="0.00" id="no">
 
             </fieldset>
 
+
+            <label for="activity">Would you like to do any of the following activities?</label>
+            <select name="activities" id="activity">
+                <option>No</option>
+                <option value="camping">Camping</option>
+                <option value="hiking">Hiking</option>
+                <option value="fishing">Fishing</option>
+                <option value="biking">Biking</option>
+                <option value="museum">Museum Exhibits</option>
+                <option value="wildlife">Wildlife Watching</option>
+            </select>
             
-                  <fieldset id="activity">
+                  <!-- <fieldset id="activity">
                     <legend>Would you like to do any of the following activities?</legend>
                   
                     <label for="hiking">Hiking</label>
@@ -106,7 +117,7 @@
 
                     <label for="wildlife">Wildlife Watching</label>
                     <input type="checkbox" name="activity" value="wildlife" id="wildlife">
-                  </fieldset>
+                  </fieldset> -->
 
                 <button type="submit" value="submit" id="submit">Submit</button>
 

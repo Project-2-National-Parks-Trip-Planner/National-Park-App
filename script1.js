@@ -23,13 +23,15 @@ parkApp.apiKey = "sIbVeWuJQGDB0ggBcZ6WYl17B68jGWLccRhQajRG"
 parkApp.form = document.querySelector('#form');
 
 
-parkApp.getParks = function (query) {
+parkApp.getParks = function (query, query2) {
     //fetch request for park info 
     const url = new URL(parkApp.apiUrl);
     url.search = new URLSearchParams({
         api_key: parkApp.apiKey,
         limit: 500,
-        q: query
+        statecode: query,
+        q: query2,
+        // q: "cost:%2030.00"
     });
 
     //make our Api call
@@ -72,9 +74,18 @@ parkApp.displayParks = function(parkDataArray) {
     parkInfo.appendChild(image);
     parkInfo.appendChild(description);
 
+    // console.log(displayPark.freeParks);
+
+    // const fees = object.entranceFees[0];
+    // console.log(fees);
+
     //append HTMl to the #parksInfo element
     document.querySelector('#parksInfo').appendChild(parkInfo);
     }
+
+    // const freeParks = object.filter((object) => {
+    //     return park.EntranceFees[0].cost = "0.00";
+    // })
 }
 
 parkApp.eventListener = function () {
@@ -83,14 +94,14 @@ parkApp.eventListener = function () {
 
         const userStateChoice = document.querySelector('#chosenState').value;
 
-        const userBudgetChoice = document.querySelector('#budget').value;
+        // const userBudgetChoice = document.querySelector('input[name="cost"]:checked').value;
 
-        const userActivityChoice = document.querySelector ('#activity').value;
-        console.log(userStateChoice);
-        parkApp.getParks (userStateChoice);
-        
+        const userActivityChoice = document.querySelector('#activity').value;
+
+        console.log(userStateChoice, userActivityChoice);
+        parkApp.getParks (userStateChoice, userActivityChoice);
     })
-}
+    }
 
 
 
