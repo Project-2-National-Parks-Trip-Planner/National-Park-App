@@ -21,6 +21,7 @@ const parkApp = {};
 parkApp.apiUrl = "https://developer.nps.gov/api/v1/parks"
 parkApp.apiKey = "sIbVeWuJQGDB0ggBcZ6WYl17B68jGWLccRhQajRG"
 parkApp.form = document.querySelector('#form');
+parkApp.parksInfoDiv = document.querySelector('#parksInfo');
 
 
 parkApp.getParks = function (query, query2) {
@@ -41,6 +42,7 @@ parkApp.getParks = function (query, query2) {
     }).then(parkData =>{
         // parkApp.parkInfo.innerHTML = '';
         const parkDataArray = parkData.data;
+        parkApp.parksInfoDiv.innerHTML = '';
         parkApp.displayParks(parkDataArray);
     })
 
