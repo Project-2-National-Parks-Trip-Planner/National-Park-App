@@ -11,12 +11,12 @@
 <body>
     <header>
         <h1>US National Parks Trip Planner</h1>
-        <!-- <h2>It's time to connect with nature!</h2> -->
     </header>
 
     <main>
         <h2>Tell us about your trip preferences:</h2>
         <form id="form">
+
             <label for="chosenState">Which state would you like the park to be in?</label>
             <select name="state" id="chosenState">
                 <option value="AL">Alabama</option>
@@ -73,21 +73,8 @@
                 <option value="WY">Wyoming</option>
             </select>
 
-            <!-- <fieldset id="budget">
-                <legend>Are you willing to pay to enter the park?</legend>
-
-                <label for="yes">Yes</label>
-                <input type="radio" name="cost" value="" id="yes">
-
-                <label for="No">No</label>
-                <input type="radio" name="cost" value="0.00" id="no">
-
-            </fieldset> -->
-
-
             <label for="activity">Would you like to do any of the following activities?</label>
             <select name="activities" id="activity">
-                <option>No</option>
                 <option value="camping">Camping</option>
                 <option value="hiking">Hiking</option>
                 <option value="fishing">Fishing</option>
@@ -95,35 +82,16 @@
                 <option value="museum">Museum Exhibits</option>
                 <option value="wildlife">Wildlife Watching</option>
             </select>
-            
-                  <!-- <fieldset id="activity">
-                    <legend>Would you like to do any of the following activities?</legend>
-                  
-                    <label for="hiking">Hiking</label>
-                    <input type="checkbox" name="activity" value="hiking" id="hiking">
-                  
-                    <label for="camping">Camping</label>
-                    <input type="checkbox" name="activity" value="camping" id="camping">
-                  
-                    <label for="fishing">Fishing</label>
-                    <input type="checkbox" name="activity" value="fishing" id="fishing"> 
 
-                    <label for="biking">Biking</label>
-                    <input type="checkbox" name="activity" value="biking" id="biking">
-
-                    <label for="museum">Museum Exhibits</label>
-                    <input type="checkbox" name="activity" value="museum" id="museum">
-
-                    <label for="wildlife">Wildlife Watching</label>
-                    <input type="checkbox" name="activity" value="wildlife" id="wildlife">
-                  </fieldset> -->
-
-                <button type="submit" value="submit" id="submit">Submit</button>
+            <button type="submit" value="submit" id="submit">Submit</button>
 
         </form>
 
         <div class="wrapper" id="parksInfo"></div>
+
     </main>
+
+    <footer>Created at Juno College of Technology</footer>
 
     <script src="./script.js"></script>
 </body>
