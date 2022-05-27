@@ -1,3 +1,6 @@
+@import url("https://fonts.googleapis.com/css2?family=Mulish&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Slabo+27px&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat+Alternates&display=swap");
 html {
   line-height: 1.15;
   -ms-text-size-adjust: 100%;
@@ -8,12 +11,7 @@ body {
   margin: 0;
 }
 
-article,
-aside,
-footer,
-header,
-nav,
-section {
+article, aside, footer, header, nav, section {
   display: block;
 }
 
@@ -22,9 +20,7 @@ h1 {
   margin: 0.67em 0;
 }
 
-figcaption,
-figure,
-main {
+figcaption, figure, main {
   display: block;
 }
 
@@ -56,19 +52,15 @@ abbr[title] {
           text-decoration: underline dotted;
 }
 
-b,
-strong {
+b, strong {
   font-weight: inherit;
 }
 
-b,
-strong {
+b, strong {
   font-weight: bolder;
 }
 
-code,
-kbd,
-samp {
+code, kbd, samp {
   font-family: monospace, monospace;
   font-size: 1em;
 }
@@ -86,8 +78,7 @@ small {
   font-size: 80%;
 }
 
-sub,
-sup {
+sub, sup {
   font-size: 75%;
   line-height: 0;
   position: relative;
@@ -102,8 +93,7 @@ sup {
   top: -0.5em;
 }
 
-audio,
-video {
+audio, video {
   display: inline-block;
 }
 
@@ -120,46 +110,31 @@ svg:not(:root) {
   overflow: hidden;
 }
 
-button,
-input,
-optgroup,
-select,
-textarea {
+button, input, optgroup, select, textarea {
   font-family: sans-serif;
   font-size: 100%;
   line-height: 1.15;
   margin: 0;
 }
 
-button,
-input {
+button, input {
   overflow: visible;
 }
 
-button,
-select {
+button, select {
   text-transform: none;
 }
 
-button,
-html [type=button],
-[type=reset],
-[type=submit] {
+button, html [type=button], [type=reset], [type=submit] {
   -webkit-appearance: button;
 }
 
-button::-moz-focus-inner,
-[type=button]::-moz-focus-inner,
-[type=reset]::-moz-focus-inner,
-[type=submit]::-moz-focus-inner {
+button::-moz-focus-inner, [type=button]::-moz-focus-inner, [type=reset]::-moz-focus-inner, [type=submit]::-moz-focus-inner {
   border-style: none;
   padding: 0;
 }
 
-button:-moz-focusring,
-[type=button]:-moz-focusring,
-[type=reset]:-moz-focusring,
-[type=submit]:-moz-focusring {
+button:-moz-focusring, [type=button]:-moz-focusring, [type=reset]:-moz-focusring, [type=submit]:-moz-focusring {
   outline: 1px dotted ButtonText;
 }
 
@@ -186,15 +161,13 @@ textarea {
   overflow: auto;
 }
 
-[type=checkbox],
-[type=radio] {
+[type=checkbox], [type=radio] {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   padding: 0;
 }
 
-[type=number]::-webkit-inner-spin-button,
-[type=number]::-webkit-outer-spin-button {
+[type=number]::-webkit-inner-spin-button, [type=number]::-webkit-outer-spin-button {
   height: auto;
 }
 
@@ -203,8 +176,7 @@ textarea {
   outline-offset: -2px;
 }
 
-[type=search]::-webkit-search-cancel-button,
-[type=search]::-webkit-search-decoration {
+[type=search]::-webkit-search-cancel-button, [type=search]::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -213,8 +185,7 @@ textarea {
   font: inherit;
 }
 
-details,
-menu {
+details, menu {
   display: block;
 }
 
@@ -234,9 +205,14 @@ template {
   display: none;
 }
 
-* {
+html {
   -webkit-box-sizing: border-box;
-  box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
 }
 
 .sr-only {
@@ -253,7 +229,24 @@ template {
   overflow: hidden;
 }
 
-body {
+.skip-link {
+  position: absolute;
+  left: -1000px;
+  top: 5px;
+  z-index: 999;
+  background: white;
+  color: black;
+}
+
+.skip-link:focus {
+  left: 0;
+}
+
+html {
+  font-size: 125%;
+}
+
+header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -276,7 +269,7 @@ body {
   transition: 0.4s ease;
   background-image: url(../assets/image1.jpg);
 }
-body::before {
+header::before {
   content: "";
   position: absolute;
   top: 0;
@@ -286,14 +279,14 @@ body::before {
   background-color: rgba(0, 0, 0, 0.7);
   z-index: -1;
 }
-body h1 {
+header h1 {
   color: white;
   font-size: 60px;
   position: absolute;
   z-index: 2;
   text-transform: uppercase;
 }
-body .homeImageContainer {
+header .homeImageContainer {
   -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
           box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   height: 70vh;
@@ -301,22 +294,22 @@ body .homeImageContainer {
   position: relative;
   overflow: hidden;
 }
-body .homeImageContainer .image1 {
+header .homeImageContainer .image1 {
   background-image: url("../assets/image1.jpg");
 }
-body .homeImageContainer .image2 {
+header .homeImageContainer .image2 {
   background-image: url("../assets/image2.jpg");
 }
-body .homeImageContainer .image3 {
+header .homeImageContainer .image3 {
   background-image: url("../assets/image3.jpg");
 }
-body .homeImageContainer .image4 {
+header .homeImageContainer .image4 {
   background-image: url("../assets/image4.jpg");
 }
-body .homeImageContainer .image5 {
+header .homeImageContainer .image5 {
   background-image: url("../assets/image5.jpg");
 }
-body .homeImageContainer .homeImage {
+header .homeImageContainer .homeImage {
   opacity: 0;
   height: 100vh;
   width: 100vw;
@@ -329,10 +322,10 @@ body .homeImageContainer .homeImage {
   transition: 0.4s ease;
   z-index: 1;
 }
-body .homeImageContainer .homeImage.active {
+header .homeImageContainer .homeImage.active {
   opacity: 1;
 }
-body .homeImageContainer .arrow {
+header .homeImageContainer .arrow {
   position: fixed;
   background-color: transparent;
   color: white;
@@ -344,12 +337,114 @@ body .homeImageContainer .arrow {
           transform: translateY(-50%);
   cursor: pointer;
 }
-body .homeImageContainer .arrow :focus {
+header .homeImageContainer .arrow :focus {
   outline: 0;
 }
-body .homeImageContainer .leftArrow {
+header .homeImageContainer .leftArrow {
   left: calc(15vw - 65px);
 }
-body .homeImageContainer .rightArrow {
+header .homeImageContainer .rightArrow {
   right: calc(15vw - 65px);
+}
+
+.resultsBackground {
+  background-color: rgba(31, 61, 12, 0.8705882353);
+  min-height: 100vh;
+}
+.resultsBackground h3 {
+  font-family: "Slabo 27px";
+  font-size: 1.5rem;
+  color: #2A1306;
+}
+
+.wrapper {
+  max-width: 1260px;
+  width: 85%;
+  margin: 0 auto;
+}
+
+.info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: column-reverse;
+          flex-direction: column-reverse;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  height: 100%;
+  display: inline-block;
+  width: calc(0.3333333333 * (100% - 168px));
+  padding: 20px;
+  background-image: url("../assets/resultsBackgroundImg.jpg");
+  -webkit-backdrop-filter: blur(8px);
+          backdrop-filter: blur(8px);
+  background-size: cover;
+  background-position: center center;
+  margin: 25px;
+  border-radius: 10px;
+  border: solid 3px burlywood;
+}
+.info .parkInfoContainer {
+  width: 100%;
+  height: 50%;
+  text-align: center;
+  background-color: rgba(255, 221, 51, 0.7568627451);
+  border-radius: 10%;
+  padding: 5%;
+  margin: 5px auto 10px auto;
+}
+.info .parkImgContainer {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.info .parkImgContainer img {
+  max-height: 200px;
+  width: 100%;
+  display: block;
+  -webkit-box-shadow: 5px 5px rgba(255, 221, 51, 0.6352941176);
+          box-shadow: 5px 5px rgba(255, 221, 51, 0.6352941176);
+  border: 5px solid #FFDC33;
+}
+.info h2 {
+  font-family: "Slabo 27px";
+  font-size: 1.2rem;
+  color: #2A1306;
+  margin-top: 0;
+  margin-bottom: 0px;
+  border-bottom: 1px solid #2A1306;
+}
+.info p {
+  font-family: "Montserrat Alternates";
+  font-size: 0.7rem;
+  line-height: 1rem;
+  letter-spacing: 0.4px;
+  color: #2A1306;
+}
+.info a {
+  font-family: "Montserrat Alternates";
+  font-size: 0.7rem;
+  line-height: 1rem;
+  letter-spacing: 0.4px;
+  color: #2A1306;
+  background-color: #FFFB88;
+  text-decoration: none;
+  padding: 5px;
+}
+.info a:hover {
+  background-color: #465102;
+  color: #FFFB88;
+}
+.info a:focus {
+  background-color: #465102;
+  color: #FFFB88;
 }
