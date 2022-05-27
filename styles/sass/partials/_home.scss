@@ -9,8 +9,9 @@ body {
     background-position: center center;
     background-size: cover;
     transition: 0.4s ease;
+    background-image: url(../assets/image1.jpg); //CHANGE WITH JS NOT WORKING!!!
 
-    ::before {
+    &::before {
         content: '';
         position: absolute;
         top: 0;
@@ -21,12 +22,22 @@ body {
         z-index: -1;
     }
 
+    h1 {
+        color: white;
+        font-size: 60px;
+        position: absolute;
+        z-index: 2;
+        text-transform: uppercase;
+    }
+
     .homeImageContainer {
         box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
         height: 70vh;
         width: 70vw;
         position: relative;
         overflow: hidden;
+
+
 
         .image1 {
             background-image: url("../assets/image1.jpg");
@@ -74,7 +85,6 @@ body {
             border: 2px solid orange;
             top: 50%;
             transform: translateY(-50%);
-            z-index: 100;
             cursor: pointer;
 
             :focus {
@@ -86,11 +96,8 @@ body {
             left: calc(15vw - 65px);
         }
 
-        .righttArrow {
+        .rightArrow {
             right: calc(15vw - 65px);
         }
     }
 }
-
-
-// .homeImage {}
