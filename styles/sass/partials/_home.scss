@@ -24,10 +24,38 @@ header {
 
     h1 {
         color: white;
-        font-size: 60px;
+        font-size: 55px;
         position: absolute;
         z-index: 2;
         text-transform: uppercase;
+        margin-bottom: 200px;
+    }
+
+    form {
+        display: flex;
+        gap: 100px;
+        position: absolute;
+        z-index: 2;
+        margin-top: 235px;
+
+        .firstSelection,
+        .secondSelection {
+            display: flex;
+            flex-direction: column;
+
+            p {
+                font-size: 37px;
+                color: white;
+                margin-bottom: 20px;
+            }
+
+            select {
+                width: 200px;
+            }
+        }
+
+
+
     }
 
     .homeImageContainer {
