@@ -15,7 +15,6 @@ body {
   height: 100vh;
   overflow: hidden;
   margin: 0;
-  background-image: url("../assets/image1.jpg");
   background-position: center center;
   background-size: cover;
   -webkit-transition: 0.4s ease;
@@ -30,4 +29,65 @@ body ::before {
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.7);
   z-index: -1;
+}
+body .homeImageContainer {
+  -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+          box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  height: 70vh;
+  width: 70vw;
+  position: relative;
+  overflow: hidden;
+}
+body .homeImageContainer .image1 {
+  background-image: url("../assets/image1.jpg");
+}
+body .homeImageContainer .image2 {
+  background-image: url("../assets/image2.jpg");
+}
+body .homeImageContainer .image3 {
+  background-image: url("../assets/image3.jpg");
+}
+body .homeImageContainer .image4 {
+  background-image: url("../assets/image4.jpg");
+}
+body .homeImageContainer .image5 {
+  background-image: url("../assets/image5.jpg");
+}
+body .homeImageContainer .homeImage {
+  opacity: 0;
+  height: 100vh;
+  width: 100vw;
+  background-position: center center;
+  background-size: cover;
+  position: absolute;
+  top: -15vh;
+  left: -15vw;
+  -webkit-transition: 0.4s ease;
+  transition: 0.4s ease;
+  z-index: 1;
+}
+body .homeImageContainer .homeImage.active {
+  opacity: 1;
+}
+body .homeImageContainer .arrow {
+  position: fixed;
+  background-color: transparent;
+  color: white;
+  padding: 20px;
+  font-size: 30px;
+  border: 2px solid orange;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  z-index: 100;
+  cursor: pointer;
+}
+body .homeImageContainer .arrow :focus {
+  outline: 0;
+}
+body .homeImageContainer .leftArrow {
+  left: calc(15vw - 65px);
+}
+body .homeImageContainer .righttArrow {
+  right: calc(15vw - 65px);
 }
