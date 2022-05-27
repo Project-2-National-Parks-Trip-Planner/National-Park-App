@@ -288,10 +288,40 @@ body::before {
 }
 body h1 {
   color: white;
-  font-size: 60px;
+  font-size: 55px;
   position: absolute;
   z-index: 2;
   text-transform: uppercase;
+  margin-bottom: 200px;
+}
+body form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 100px;
+  position: absolute;
+  z-index: 2;
+  margin-top: 235px;
+}
+body form .firstSelection,
+body form .secondSelection {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+body form .firstSelection p,
+body form .secondSelection p {
+  font-size: 37px;
+  color: white;
+  margin-bottom: 20px;
+}
+body form .firstSelection select,
+body form .secondSelection select {
+  width: 200px;
 }
 body .homeImageContainer {
   -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
