@@ -1,8 +1,5 @@
 
 
-
-natalie 
-
 const parkApp = {};
 
 parkApp.apiUrl = "https://developer.nps.gov/api/v1/parks"
