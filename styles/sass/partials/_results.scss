@@ -10,7 +10,6 @@
 
 .resultsBackground {
     background-color: #1f3d0cde;
-    min-height: 100vh;
 }
 
 .wrapper{
@@ -86,7 +85,7 @@
 
     p {
         font-family: $baseFont;
-        font-size: .7rem;
+        font-size: .8rem;
         line-height: 1rem;
         letter-spacing: .4px;
         color: $primary;

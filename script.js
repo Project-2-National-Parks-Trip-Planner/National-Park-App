@@ -12,7 +12,7 @@ parkApp.getParks = function (stateChoice, activityChoice) {
     const url = new URL(parkApp.apiUrl);
     url.search = new URLSearchParams({
         api_key: parkApp.apiKey,
-        limit: 500,
+        limit: 6,
         statecode: stateChoice,
         q: activityChoice
     });

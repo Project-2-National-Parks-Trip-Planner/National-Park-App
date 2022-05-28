@@ -240,6 +240,7 @@ template {
 html {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 *,
@@ -498,7 +499,6 @@ header footer .footerText a {
 
 .resultsBackground {
   background-color: rgba(31, 61, 12, 0.8705882353);
-  min-height: 100vh;
 }
 
 .wrapper {
@@ -595,7 +595,7 @@ header footer .footerText a {
 }
 .info p {
   font-family: "Montserrat Alternates";
-  font-size: 0.7rem;
+  font-size: 0.8rem;
   line-height: 1rem;
   letter-spacing: 0.4px;
   color: #2A1306;
