@@ -470,12 +470,24 @@ body .homeImageContainer .rightArrow {
   right: calc(15vw - 65px);
 }
 body footer {
-  z-index: 2;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   position: absolute;
   color: #2A1306;
   background-color: #FF9C08;
   width: 100%;
   bottom: 0;
+}
+body footer .footerText {
   font-size: 16px;
-  padding: 3px;
+  color: #2A1306;
+  margin: 15px;
+}
+body footer .footerText a {
+  text-decoration: none;
+  color: #2A1306;
 }

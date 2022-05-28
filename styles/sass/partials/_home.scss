@@ -183,13 +183,23 @@ body {
     }
 
     footer {
-        z-index: 2;
+        display: flex;
+        justify-content: space-between;
         position: absolute;
         color: $primary;
         background-color: $tertiary;
         width: 100%;
         bottom: 0;
-        font-size: 16px;
-        padding: 3px;
+
+        .footerText {
+            font-size: 16px;
+            color: $primary;
+            margin: 15px;
+
+            a {
+                text-decoration: none;
+                color: $primary;
+            }
+        }
     }
 }
