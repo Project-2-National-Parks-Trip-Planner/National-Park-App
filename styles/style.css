@@ -276,7 +276,11 @@ html {
   left: 0;
 }
 
-body {
+html {
+  font-size: 125%;
+}
+
+header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -299,7 +303,7 @@ body {
   transition: 0.4s ease;
   background-image: url(../assets/image2.jpg);
 }
-body::before {
+header::before {
   content: "";
   position: absolute;
   top: 0;
@@ -309,7 +313,7 @@ body::before {
   background-color: rgba(0, 0, 0, 0.4);
   z-index: -1;
 }
-body h1 {
+header h1 {
   font-family: "Mulish";
   color: white;
   font-size: 60px;
@@ -321,7 +325,7 @@ body h1 {
   margin-bottom: 200px;
   height: 300px;
 }
-body h2 {
+header h2 {
   font-family: "Slabo 27px";
   color: white;
   font-size: 50px;
@@ -330,7 +334,7 @@ body h2 {
   z-index: 2;
   height: 250px;
 }
-body form {
+header form {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -353,8 +357,8 @@ body form {
   height: 40vh;
   margin-top: 220px;
 }
-body form .firstSelection,
-body form .secondSelection {
+header form .firstSelection,
+header form .secondSelection {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -371,15 +375,15 @@ body form .secondSelection {
       -ms-flex-align: center;
           align-items: center;
 }
-body form .firstSelection label,
-body form .secondSelection label {
+header form .firstSelection label,
+header form .secondSelection label {
   font-family: "Montserrat Alternates";
   font-size: 37px;
   color: #FF9C08;
   margin-bottom: 20px;
 }
-body form .firstSelection select,
-body form .secondSelection select {
+header form .firstSelection select,
+header form .secondSelection select {
   width: 500px;
   padding: 18px;
   font-family: "Montserrat Alternates";
@@ -389,7 +393,7 @@ body form .secondSelection select {
   color: #465102;
   border: 3px solid white;
 }
-body form button {
+header form button {
   font-family: "Montserrat Alternates";
   padding: 18px;
   font-size: 18px;
@@ -404,12 +408,12 @@ body form button {
           transition-duration: 0.6s;
   cursor: pointer;
 }
-body form button:hover {
+header form button:hover {
   background-color: white;
   color: #FF9C08;
   border: 3px solid #FF9C08;
 }
-body .homeImageContainer {
+header .homeImageContainer {
   -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
           box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   height: 70vh;
@@ -417,22 +421,22 @@ body .homeImageContainer {
   position: relative;
   overflow: hidden;
 }
-body .homeImageContainer .image1 {
+header .homeImageContainer .image1 {
   background-image: url("../assets/image3.jpg");
 }
-body .homeImageContainer .image2 {
+header .homeImageContainer .image2 {
   background-image: url("../assets/image2.jpg");
 }
-body .homeImageContainer .image3 {
+header .homeImageContainer .image3 {
   background-image: url("../assets/image1.jpg");
 }
-body .homeImageContainer .image4 {
+header .homeImageContainer .image4 {
   background-image: url("../assets/image4.jpg");
 }
-body .homeImageContainer .image5 {
+header .homeImageContainer .image5 {
   background-image: url("../assets/image5.jpg");
 }
-body .homeImageContainer .homeImage {
+header .homeImageContainer .homeImage {
   opacity: 0;
   height: 100vh;
   width: 100vw;
@@ -445,10 +449,10 @@ body .homeImageContainer .homeImage {
   transition: 0.4s ease;
   z-index: 1;
 }
-body .homeImageContainer .homeImage.active {
+header .homeImageContainer .homeImage.active {
   opacity: 1;
 }
-body .homeImageContainer .arrow {
+header .homeImageContainer .arrow {
   position: fixed;
   background-color: transparent;
   color: white;
@@ -460,16 +464,16 @@ body .homeImageContainer .arrow {
           transform: translateY(-50%);
   cursor: pointer;
 }
-body .homeImageContainer .arrow :focus {
+header .homeImageContainer .arrow :focus {
   outline: 0;
 }
-body .homeImageContainer .leftArrow {
+header .homeImageContainer .leftArrow {
   left: calc(15vw - 65px);
 }
-body .homeImageContainer .rightArrow {
+header .homeImageContainer .rightArrow {
   right: calc(15vw - 65px);
 }
-body footer {
+header footer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -482,12 +486,135 @@ body footer {
   width: 100%;
   bottom: 0;
 }
-body footer .footerText {
+header footer .footerText {
   font-size: 16px;
   color: #2A1306;
   margin: 15px;
 }
-body footer .footerText a {
+header footer .footerText a {
   text-decoration: none;
   color: #2A1306;
+}
+
+.resultsBackground {
+  background-color: rgba(31, 61, 12, 0.8705882353);
+  min-height: 100vh;
+}
+
+.wrapper {
+  max-width: 1260px;
+  width: 90%;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+.wrapper h3 {
+  font-family: "Slabo 27px";
+  font-size: 1.5rem;
+  color: white;
+  text-align: center;
+  text-shadow: 1px 1px #2A1306;
+  margin: 50px;
+  padding: 50px;
+}
+
+.info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: column-reverse;
+          flex-direction: column-reverse;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  display: inline-block;
+  min-height: -webkit-fit-content;
+  min-height: -moz-fit-content;
+  min-height: fit-content;
+  width: calc(0.3333333333 * (100% - 168px));
+  padding: 20px;
+  background-image: url("../assets/resultsBackgroundImg.jpg");
+  -webkit-backdrop-filter: blur(8px);
+          backdrop-filter: blur(8px);
+  background-size: cover;
+  background-position: center center;
+  margin: 25px;
+  border-radius: 10px;
+  border: solid 3px #FF9C08;
+}
+.info .parkInfoContainer {
+  width: 100%;
+  min-height: -webkit-fit-content;
+  min-height: -moz-fit-content;
+  min-height: fit-content;
+  text-align: center;
+  background-color: rgba(255, 221, 51, 0.7568627451);
+  border-radius: 10%;
+  padding: 5%;
+  margin: 5px auto 10px auto;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+.info .parkImgContainer {
+  width: 100%;
+  height: 200px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: auto;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+.info .parkImgContainer img {
+  height: 100%;
+  width: 100%;
+  display: block;
+  -webkit-box-shadow: 5px 5px rgba(27, 79, 25, 0.6431372549);
+          box-shadow: 5px 5px rgba(27, 79, 25, 0.6431372549);
+  border: 5px solid #FFDC33;
+}
+.info h2 {
+  font-family: "Slabo 27px";
+  font-size: 1.2rem;
+  color: #2A1306;
+  margin-top: 0;
+  margin-bottom: 0px;
+  border-bottom: 1px solid #2A1306;
+}
+.info p {
+  font-family: "Montserrat Alternates";
+  font-size: 0.7rem;
+  line-height: 1rem;
+  letter-spacing: 0.4px;
+  color: #2A1306;
+}
+.info a {
+  font-family: "Montserrat Alternates";
+  font-size: 0.7rem;
+  line-height: 1rem;
+  letter-spacing: 0.4px;
+  color: #2A1306;
+  background-color: #FFFB88;
+  text-decoration: none;
+  padding: 5px;
+}
+.info a:hover {
+  background-color: #465102;
+  color: #FFFB88;
+}
+.info a:focus {
+  background-color: #465102;
+  color: #FFFB88;
 }

@@ -22,8 +22,15 @@ parkApp.getParks = function (stateChoice, activityChoice) {
         return results.json();
     }).then(parkData =>{
         const parkDataArray = parkData.data;
+        console.log(parkDataArray);
         parkApp.parksInfoDiv.innerHTML = '';
+        if (parkDataArray.length > 0) {
         parkApp.displayParks(parkDataArray);
+        } else {
+            const error = document.createElement ('h3');
+            error.innerText = "Looks like your search returned 0 results, you may wish to alter your search.";
+            document.querySelector('#parksInfo').appendChild(error);
+        }
     })
     
 }
@@ -43,11 +50,26 @@ parkApp.displayParks = function(parkDataArray) {
     const description = document.createElement('p');
     description.innerText = object.description;
 
+    const hyperlink = document.createElement('a');
+    hyperlink.innerText = "Get more information here";
+    hyperlink.href = object.url;
+
     const parkInfo = document.createElement('div');
     parkInfo.classList.add('info');
-    parkInfo.appendChild(title);
-    parkInfo.appendChild(image);
-    parkInfo.appendChild(description);
+
+    const infoContainer = document.createElement('div');
+    infoContainer.classList.add('parkInfoContainer');
+    
+    const imgContainerPark = document.createElement('div');
+    imgContainerPark.classList.add('parkImgContainer');
+   
+    parkInfo.appendChild(infoContainer);
+    parkInfo.appendChild(imgContainerPark);
+
+    infoContainer.appendChild(title);
+    infoContainer.appendChild(description);
+    infoContainer.appendChild(hyperlink);
+    imgContainerPark.appendChild(image);
 
     document.querySelector('#parksInfo').appendChild(parkInfo);
     }
@@ -67,8 +89,7 @@ parkApp.eventListener = function () {
 
 parkApp.init = function(){
     parkApp.eventListener();
-    parkApp.getParks(); 
-    
+    // parkApp.getParks();
 };
 
 
