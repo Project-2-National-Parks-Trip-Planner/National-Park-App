@@ -312,12 +312,11 @@ header::before {
   width: 100%;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.4);
-  z-index: -1;
 }
 header h1 {
   font-family: "Mulish";
   color: white;
-  font-size: 60px;
+  font-size: 45px;
   letter-spacing: 3px;
   text-shadow: 4px 4px #FF9C08;
   position: absolute;
@@ -329,7 +328,7 @@ header h1 {
 header h2 {
   font-family: "Slabo 27px";
   color: white;
-  font-size: 50px;
+  font-size: 40px;
   letter-spacing: 3px;
   position: absolute;
   z-index: 2;
@@ -392,7 +391,8 @@ header form .secondSelection select {
   border-radius: 7px;
   background-color: #FFFB88;
   color: #465102;
-  border: 3px solid white;
+  border: none;
+  outline: 3px solid white;
 }
 header form button {
   font-family: "Montserrat Alternates";
@@ -403,7 +403,8 @@ header form button {
   font-weight: bold;
   background-color: #FF9C08;
   color: #465102;
-  border: 3px solid white;
+  border: none;
+  outline: 3px solid white;
   border-radius: 50px;
   -webkit-transition-duration: 0.6s;
           transition-duration: 0.6s;
@@ -412,7 +413,7 @@ header form button {
 header form button:hover {
   background-color: white;
   color: #FF9C08;
-  border: 3px solid #FF9C08;
+  outline: 3px solid #FF9C08;
 }
 header .homeImageContainer {
   -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
@@ -453,52 +454,70 @@ header .homeImageContainer .homeImage {
 header .homeImageContainer .homeImage.active {
   opacity: 1;
 }
-header .homeImageContainer .arrow {
-  position: fixed;
-  background-color: transparent;
-  color: white;
-  padding: 20px;
-  font-size: 30px;
-  border: 2px solid orange;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
-  cursor: pointer;
-}
-header .homeImageContainer .arrow :focus {
-  outline: 0;
-}
-header .homeImageContainer .leftArrow {
-  left: calc(15vw - 65px);
-}
-header .homeImageContainer .rightArrow {
-  right: calc(15vw - 65px);
-}
-header footer {
+
+footer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  position: absolute;
+  position: sticky;
   color: #2A1306;
   background-color: #FF9C08;
   width: 100%;
   bottom: 0;
 }
-header footer .footerText {
+footer .footerText {
   font-size: 16px;
   color: #2A1306;
   margin: 15px;
 }
-header footer .footerText a {
+footer .footerText a {
   text-decoration: none;
   color: #2A1306;
 }
 
+@media (min-width: 870px) and (max-width: 1000px) {
+  header h1 {
+    font-size: 40px;
+    text-shadow: 3px 3px #FF9C08;
+    margin-bottom: 130px;
+  }
+}
+@media (min-width: 600px) and (max-width: 869px) {
+  header h1 {
+    font-size: 25px;
+    text-shadow: 2px 2px #FF9C08;
+    margin-bottom: 130px;
+  }
+  header h2 {
+    font-size: 30px;
+  }
+}
+@media (min-width: 450px) and (max-width: 599px) {
+  header h1 {
+    font-size: 18px;
+    text-shadow: 2px 2px #FF9C08;
+    margin-bottom: 130px;
+  }
+  header h2 {
+    font-size: 20px;
+  }
+  header form .firstSelection select,
+header form .secondSelection select {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+  }
+  header form button {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+  }
+}
 .resultsBackground {
-  background-color: rgba(31, 61, 12, 0.8705882353);
+  background-color: lightyellow;
 }
 
 .wrapper {
@@ -508,9 +527,6 @@ header footer .footerText a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: stretch;
-      -ms-flex-align: stretch;
-          align-items: stretch;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
 }
@@ -524,32 +540,39 @@ header footer .footerText a {
   padding: 50px;
 }
 
-.info {
+.elWrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: end;
+  margin: 25px auto;
+}
+.elWrapper .info {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: vertical;
-  -webkit-box-direction: reverse;
-      -ms-flex-direction: column-reverse;
-          flex-direction: column-reverse;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  display: inline-block;
-  min-height: -webkit-fit-content;
-  min-height: -moz-fit-content;
-  min-height: fit-content;
-  width: calc(0.3333333333 * (100% - 168px));
+  width: 40%;
+  margin: 0 auto;
   padding: 20px;
   background-image: url("../assets/resultsBackgroundImg.jpg");
   -webkit-backdrop-filter: blur(8px);
           backdrop-filter: blur(8px);
   background-size: cover;
   background-position: center center;
-  margin: 25px;
   border-radius: 10px;
-  border: solid 3px #FF9C08;
+  outline: solid 6px #FF9C08;
 }
-.info .parkInfoContainer {
+.elWrapper .info .parkInfoContainer {
   width: 100%;
   min-height: -webkit-fit-content;
   min-height: -moz-fit-content;
@@ -563,7 +586,7 @@ header footer .footerText a {
       -ms-flex: 1;
           flex: 1;
 }
-.info .parkImgContainer {
+.elWrapper .info .parkImgContainer {
   width: 100%;
   height: 200px;
   display: -webkit-box;
@@ -577,15 +600,15 @@ header footer .footerText a {
       -ms-flex: 1;
           flex: 1;
 }
-.info .parkImgContainer img {
+.elWrapper .info .parkImgContainer img {
   height: 100%;
   width: 100%;
   display: block;
   -webkit-box-shadow: 5px 5px rgba(27, 79, 25, 0.6431372549);
           box-shadow: 5px 5px rgba(27, 79, 25, 0.6431372549);
-  border: 5px solid #FFDC33;
+  outline: 5px solid #FFDC33;
 }
-.info h2 {
+.elWrapper .info h2 {
   font-family: "Slabo 27px";
   font-size: 1.2rem;
   color: #2A1306;
@@ -593,14 +616,14 @@ header footer .footerText a {
   margin-bottom: 0px;
   border-bottom: 1px solid #2A1306;
 }
-.info p {
+.elWrapper .info p {
   font-family: "Montserrat Alternates";
   font-size: 0.8rem;
   line-height: 1rem;
   letter-spacing: 0.4px;
   color: #2A1306;
 }
-.info a {
+.elWrapper .info a {
   font-family: "Montserrat Alternates";
   font-size: 0.7rem;
   line-height: 1rem;
@@ -610,11 +633,47 @@ header footer .footerText a {
   text-decoration: none;
   padding: 5px;
 }
-.info a:hover {
+.elWrapper .info a:hover {
   background-color: #465102;
   color: #FFFB88;
 }
-.info a:focus {
+.elWrapper .info a:focus {
   background-color: #465102;
   color: #FFFB88;
+}
+.elWrapper .map {
+  margin: 0 auto;
+}
+.elWrapper .map iframe.parkMap {
+  border: none;
+  border-radius: 10px;
+  outline: solid 6px #FF9C08;
+}
+
+@media (min-width: 600px) and (max-width: 1000px) {
+  .elWrapper {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 35px;
+  }
+  .elWrapper .info {
+    width: 450px;
+  }
+}
+@media (min-width: 450px) and (max-width: 599px) {
+  .elWrapper {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 35px;
+  }
+  .elWrapper .info {
+    width: 390px;
+  }
+  .elWrapper .map iframe.parkMap {
+    width: 390px;
+  }
 }

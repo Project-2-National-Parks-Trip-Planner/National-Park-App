@@ -19,13 +19,13 @@ header {
         width: 100%;
         height: 100vh;
         background-color: rgba(0, 0, 0, 0.4);
-        z-index: -1;
+        // z-index: -1;
     }
 
     h1 {
         font-family: $headerFont;
         color: white;
-        font-size: 60px;
+        font-size: 45px;
         letter-spacing: 3px;
         text-shadow: 4px 4px $tertiary;
         position: absolute;
@@ -38,7 +38,7 @@ header {
     h2 {
         font-family: $h2Font;
         color: white;
-        font-size: 50px;
+        font-size: 40px;
         letter-spacing: 3px;
         position: absolute;
         z-index: 2;
@@ -82,7 +82,8 @@ header {
                 border-radius: 7px;
                 background-color: $quinary;
                 color: $secondary;
-                border: 3px solid white;
+                border: none;
+                outline: 3px solid white;
             }
         }
 
@@ -95,7 +96,8 @@ header {
             font-weight: bold;
             background-color: $tertiary;
             color: $secondary;
-            border: 3px solid white;
+            border: none;
+            outline: 3px solid white;
             border-radius: 50px;
             transition-duration: 0.6s;
             cursor: pointer;
@@ -103,7 +105,7 @@ header {
             &:hover {
                 background-color: white;
                 color: $tertiary;
-                border: 3px solid $tertiary;
+                outline: 3px solid $tertiary;
             }
         }
 
@@ -157,49 +159,84 @@ header {
             opacity: 1;
         }
 
-        .arrow {
-            position: fixed;
-            background-color: transparent;
-            color: white;
-            padding: 20px;
-            font-size: 30px;
-            border: 2px solid orange;
-            top: 50%;
-            transform: translateY(-50%);
-            cursor: pointer;
 
-            :focus {
-                outline: 0;
-            }
-        }
-
-        .leftArrow {
-            left: calc(15vw - 65px);
-        }
-
-        .rightArrow {
-            right: calc(15vw - 65px);
-        }
     }
 
-    footer {
-        display: flex;
-        justify-content: space-between;
-        position: absolute;
+}
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    position: sticky;
+    color: $primary;
+    background-color: $tertiary;
+    width: 100%;
+    bottom: 0;
+
+    .footerText {
+        font-size: 16px;
         color: $primary;
-        background-color: $tertiary;
-        width: 100%;
-        bottom: 0;
+        margin: 15px;
 
-        .footerText {
-            font-size: 16px;
+        a {
+            text-decoration: none;
             color: $primary;
-            margin: 15px;
+        }
+    }
+}
 
-            a {
-                text-decoration: none;
-                color: $primary;
+@media (min-width: 870px) and (max-width: 1000px) {
+    header {
+        h1 {
+            font-size: 40px;
+            text-shadow: 3px 3px #FF9C08;
+            margin-bottom: 130px;
+        }
+    }
+}
+
+@media (min-width: 600px) and (max-width: 869px) {
+    header {
+        h1 {
+            font-size: 25px;
+            text-shadow: 2px 2px #FF9C08;
+            margin-bottom: 130px;
+        }
+
+        h2 {
+            font-size: 30px;
+
+        }
+    }
+}
+
+@media (min-width: 450px) and (max-width: 599px) {
+    header {
+        h1 {
+            font-size: 18px;
+            text-shadow: 2px 2px #FF9C08;
+            margin-bottom: 130px;
+        }
+
+        h2 {
+            font-size: 20px;
+        }
+
+        form {
+
+            .firstSelection,
+            .secondSelection {
+                select {
+                    width: fit-content;
+                }
+            }
+
+
+            button {
+                width: fit-content;
             }
         }
+
+
     }
 }

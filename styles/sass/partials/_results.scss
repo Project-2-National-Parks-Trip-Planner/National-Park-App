@@ -3,22 +3,23 @@
 //         .parkInfoContainer 
 //             h2 
 //             p 
-          // a
+// a
 //         .parkImgContainer 
 //             img 
 
 
 .resultsBackground {
-    background-color: #1f3d0cde;
+    background-color: lightyellow; //new
 }
 
-.wrapper{
+.wrapper {
     max-width: 1260px;
     width: 90%;
     margin: 0 auto;
     display: flex;
-    align-items: stretch;
+    // align-items: stretch;
     flex-wrap: wrap;
+
     h3 {
         font-family: $h2Font;
         font-size: 1.5rem;
@@ -28,86 +29,139 @@
         margin: 50px;
         padding: 50px;
     }
-  }
+}
 
-.info {
+
+.elWrapper {
     display: flex;
-    flex-direction: column-reverse;
-    flex-wrap:wrap;
-    display: inline-block;
-    min-height: fit-content;
-    width: calc(1/3 * (100% - (28px * 6)));
-    padding: 20px;
-    background-image: url("../assets/resultsBackgroundImg.jpg");
-    backdrop-filter: blur(8px);
-    background-size: cover;
-    background-position: center center;
-    margin: 25px;
-    border-radius: 10px;
-    border: solid 3px $tertiary;
+    justify-content: space-around;
+    // align-content: center;
+    align-items: end;
+    margin: 25px auto;
 
-    .parkInfoContainer { 
-        width: 100%;
-        min-height: fit-content;
-        text-align: center;
-        background-color: #ffdd33c1;
-        border-radius: 10%;
-        padding: 5%;
-        margin: 5px auto 10px auto;
-        flex: 1;
-    }
-
-    .parkImgContainer {
-        width: 100%;
-        height: 200px;
+    .info {
         display: flex;
-        justify-content: center;
-        margin: auto;
-        flex: 1;
-        img {
-            height: 100%;
+        flex-direction: column;
+        flex-wrap: wrap;
+        // display: inline-block;
+        // min-height: fit-content;
+        width: 40%;
+        margin: 0 auto;
+        // width: calc(1/3 * (100% - (28px * 6)));
+        padding: 20px;
+        background-image: url("../assets/resultsBackgroundImg.jpg");
+        backdrop-filter: blur(8px);
+        background-size: cover;
+        background-position: center center;
+        border-radius: 10px;
+        outline: solid 6px $tertiary;
+
+        .parkInfoContainer {
             width: 100%;
-            display: block;
-            box-shadow:5px 5px #1b4f19a4;
-            border: 5px solid $quaternary;
+            min-height: fit-content;
+            text-align: center;
+            background-color: #ffdd33c1;
+            border-radius: 10%;
+            padding: 5%;
+            margin: 5px auto 10px auto;
+            flex: 1;
+        }
+
+        .parkImgContainer {
+            width: 100%;
+            height: 200px;
+            display: flex;
+            justify-content: center;
+            margin: auto;
+            flex: 1;
+
+            img {
+                height: 100%;
+                width: 100%;
+                display: block;
+                box-shadow: 5px 5px #1b4f19a4;
+                outline: 5px solid $quaternary;
+            }
+        }
+
+        h2 {
+            font-family: $h2Font;
+            font-size: 1.2rem;
+            color: $primary;
+            margin-top: 0;
+            margin-bottom: 0px;
+            border-bottom: 1px solid $primary;
+        }
+
+
+        p {
+            font-family: $baseFont;
+            font-size: .8rem;
+            line-height: 1rem;
+            letter-spacing: .4px;
+            color: $primary;
+        }
+
+        a {
+            font-family: $baseFont;
+            font-size: .7rem;
+            line-height: 1rem;
+            letter-spacing: .4px;
+            color: $primary;
+            background-color: $quinary;
+            text-decoration: none;
+            padding: 5px;
+
+            &:hover {
+                background-color: $secondary;
+                color: $quinary;
+            }
+
+            &:focus {
+                background-color: $secondary;
+                color: $quinary;
+            }
+        }
+
+    }
+
+    .map {
+        // width: 40%;
+        margin: 0 auto;
+
+        iframe.parkMap {
+            border: none;
+            border-radius: 10px;
+            outline: solid 6px $tertiary;
         }
     }
 
-    h2 {
-        font-family: $h2Font;
-        font-size: 1.2rem;
-        color: $primary;
-        margin-top: 0;
-        margin-bottom: 0px;
-        border-bottom: 1px solid $primary;
-    }
+}
 
+@media (min-width: 600px) and (max-width: 1000px) {
+    .elWrapper {
+        flex-direction: column;
+        gap: 35px;
 
-    p {
-        font-family: $baseFont;
-        font-size: .8rem;
-        line-height: 1rem;
-        letter-spacing: .4px;
-        color: $primary;
-    }
-
-    a {
-        font-family: $baseFont;
-        font-size: .7rem;
-        line-height: 1rem;
-        letter-spacing: .4px;
-        color: $primary;
-        background-color:$quinary; 
-        text-decoration: none;
-        padding: 5px;
-        &:hover {
-            background-color: $secondary;
-            color: $quinary;
-        }
-        &:focus {
-            background-color: $secondary;
-            color: $quinary;
+        .info {
+            width: 450px;
         }
     }
+}
 
+@media (min-width: 450px) and (max-width: 599px) {
+    .elWrapper {
+        flex-direction: column;
+        gap: 35px;
+
+        .info {
+            width: 390px;
+        }
+
+        .map {
+            iframe.parkMap {
+                width: 390px;
+            }
+        }
+    }
 }

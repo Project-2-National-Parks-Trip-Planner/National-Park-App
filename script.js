@@ -12,7 +12,7 @@ parkApp.getParks = function (stateChoice, activityChoice) {
     const url = new URL(parkApp.apiUrl);
     url.search = new URLSearchParams({
         api_key: parkApp.apiKey,
-        limit: 6,
+        limit: 4,
         statecode: stateChoice,
         q: activityChoice
     });
@@ -22,7 +22,7 @@ parkApp.getParks = function (stateChoice, activityChoice) {
         return results.json();
     }).then(parkData =>{
         const parkDataArray = parkData.data;
-        console.log(parkDataArray);
+        // console.log(parkDataArray);
         parkApp.parksInfoDiv.innerHTML = '';
         if (parkDataArray.length > 0) {
         parkApp.displayParks(parkDataArray);
@@ -54,6 +54,25 @@ parkApp.displayParks = function(parkDataArray) {
     hyperlink.innerText = "Get more information here";
     hyperlink.href = object.url;
 
+    //new div for info and map wrap
+    const elementWrapper = document.createElement('div');
+    elementWrapper.classList.add('elWrapper');
+
+    //new div for map
+    const parkMap = document.createElement('div');
+    parkMap.classList.add('map');
+
+    const mapTag = `
+    <iframe
+        class="parkMap"
+        title="mapa"   
+        src="https://maps.google.com/maps?q=${object.latitude},${object.longitude}&t=&z=10&ie=UTF8&iwloc=&output=embed" 
+        width="450" 
+        height="450"
+        loading="lazy">
+    </iframe>
+    `;    
+
     const parkInfo = document.createElement('div');
     parkInfo.classList.add('info');
 
@@ -62,6 +81,12 @@ parkApp.displayParks = function(parkDataArray) {
     
     const imgContainerPark = document.createElement('div');
     imgContainerPark.classList.add('parkImgContainer');
+
+    //appending new elements
+    elementWrapper.appendChild(parkInfo);
+    elementWrapper.appendChild(parkMap);
+
+    parkMap.innerHTML += mapTag;
    
     parkInfo.appendChild(infoContainer);
     parkInfo.appendChild(imgContainerPark);
@@ -71,7 +96,8 @@ parkApp.displayParks = function(parkDataArray) {
     infoContainer.appendChild(hyperlink);
     imgContainerPark.appendChild(image);
 
-    document.querySelector('#parksInfo').appendChild(parkInfo);
+    document.querySelector('#parksInfo').appendChild(elementWrapper);
+
     }
 }
 
