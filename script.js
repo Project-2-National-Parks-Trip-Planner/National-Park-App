@@ -12,7 +12,7 @@ parkApp.getParks = function (stateChoice, activityChoice) {
     const url = new URL(parkApp.apiUrl);
     url.search = new URLSearchParams({
         api_key: parkApp.apiKey,
-        limit: 4,
+        limit: 6,
         statecode: stateChoice,
         q: activityChoice
     });
@@ -26,8 +26,12 @@ parkApp.getParks = function (stateChoice, activityChoice) {
         parkApp.parksInfoDiv.innerHTML = '';
         if (parkDataArray.length > 0) {
         parkApp.displayParks(parkDataArray);
+        const pageHeight = window.innerHeight;
+        window.scrollBy(0, pageHeight);
         } else {
             const error = document.createElement ('h3');
+            const pageHeight = window.innerHeight;
+            window.scrollBy(0, pageHeight);
             error.innerText = "Looks like your search returned 0 results, you may wish to alter your search.";
             document.querySelector('#parksInfo').appendChild(error);
         }
@@ -38,7 +42,6 @@ parkApp.getParks = function (stateChoice, activityChoice) {
 parkApp.displayParks = function(parkDataArray) {
     for(let i=0, l = parkDataArray.length; i < l; i++) {
     const object=parkDataArray[i]; 
-    console.log(object);
    
     const title = document.createElement ('h2');
     title.innerText = object.fullName;
@@ -113,9 +116,35 @@ parkApp.eventListener = function () {
     })
     }
 
+parkApp.scrollToSearch = function () {
+    document.addEventListener("scroll", handleScroll);
+
+    const searchAgain = document.querySelector('#searchAgain');
+
+    function handleScroll() {
+        const scrollableHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const scrollDistance = 0.1;
+
+        if ((document.documentElement.scrollTop / scrollableHeight ) > scrollDistance) {
+            searchAgain.style.display = "block";
+        } else {
+            searchAgain.style.display = "none";
+        }
+    }
+
+    searchAgain.addEventListener("click", scrollToTop);
+
+    function scrollToTop() {
+        window.scrollTo({
+            top: 0, 
+            behavior: "smooth"
+        });
+    }
+}
+
 parkApp.init = function(){
     parkApp.eventListener();
-    // parkApp.getParks();
+    parkApp.scrollToSearch();
 };
 
 
