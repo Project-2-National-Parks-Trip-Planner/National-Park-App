@@ -313,7 +313,13 @@ header::before {
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.4);
 }
-header h3 {
+header .headerIcon {
+  position: absolute;
+  left: 25px;
+  top: 5px;
+  z-index: 2;
+}
+header .headerIcon h1 {
   background-color: rgba(255, 156, 8, 0.7411764706);
   border-radius: 50%;
   padding: 9px;
@@ -324,14 +330,10 @@ header h3 {
   text-shadow: 1px 1px #2A1306;
   border: dotted #2A1306 2px;
   line-height: 1.3rem;
-  position: relative;
-  left: -307%;
-  top: 136%;
-  z-index: 200;
   -webkit-transform: rotate(-25deg);
           transform: rotate(-25deg);
 }
-header h1 {
+header h3 {
   font-family: "Mulish";
   color: white;
   font-size: 45px;
@@ -443,19 +445,10 @@ header .homeImageContainer {
   overflow: hidden;
 }
 header .homeImageContainer .image1 {
-  background-image: url("../assets/image3.jpg");
+  background-image: url("../assets/image2.jpg");
 }
 header .homeImageContainer .image2 {
   background-image: url("../assets/image2.jpg");
-}
-header .homeImageContainer .image3 {
-  background-image: url("../assets/image1.jpg");
-}
-header .homeImageContainer .image4 {
-  background-image: url("../assets/image4.jpg");
-}
-header .homeImageContainer .image5 {
-  background-image: url("../assets/image5.jpg");
 }
 header .homeImageContainer .homeImage {
   opacity: 0;
@@ -497,15 +490,15 @@ footer .footerText a {
   color: #2A1306;
 }
 
-@media (min-width: 870px) and (max-width: 1000px) {
-  header h1 {
+@media (max-width: 1000px) {
+  header h3 {
     font-size: 40px;
     text-shadow: 3px 3px #FF9C08;
     margin-bottom: 130px;
   }
 }
 @media (min-width: 600px) and (max-width: 869px) {
-  header h1 {
+  header h3 {
     font-size: 25px;
     text-shadow: 2px 2px #FF9C08;
     margin-bottom: 130px;
@@ -514,8 +507,8 @@ footer .footerText a {
     font-size: 30px;
   }
 }
-@media (min-width: 450px) and (max-width: 599px) {
-  header h1 {
+@media (max-width: 599px) {
+  header h3 {
     font-size: 18px;
     text-shadow: 2px 2px #FF9C08;
     margin-bottom: 130px;
@@ -535,7 +528,15 @@ header form .secondSelection select {
     width: fit-content;
   }
 }
-@media (min-width: 320px) and (max-width: 449px) {
+@media (max-width: 449px) {
+  header h3 {
+    display: none;
+  }
+  header h2 {
+    font-size: 25px;
+    text-align: center;
+    height: 350px;
+  }
   header form .firstSelection select,
 header form .secondSelection select {
     width: 215px;
@@ -562,7 +563,7 @@ header form .secondSelection select {
 .wrapper h3 {
   font-family: "Slabo 27px";
   font-size: 1.5rem;
-  color: white;
+  color: #465102;
   text-align: center;
   text-shadow: 1px 1px #2A1306;
   margin: 0 auto;

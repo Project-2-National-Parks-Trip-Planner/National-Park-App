@@ -22,7 +22,6 @@ parkApp.getParks = function (stateChoice, activityChoice) {
         return results.json();
     }).then(parkData =>{
         const parkDataArray = parkData.data;
-        // console.log(parkDataArray);
         parkApp.parksInfoDiv.innerHTML = '';
         if (parkDataArray.length > 0) {
         parkApp.displayParks(parkDataArray);
@@ -30,10 +29,10 @@ parkApp.getParks = function (stateChoice, activityChoice) {
         window.scrollBy(0, pageHeight);
         } else {
             const error = document.createElement ('h3');
-            const pageHeight = window.innerHeight;
-            window.scrollBy(0, pageHeight);
             error.innerText = "Looks like your search returned 0 results, you may wish to alter your search.";
             document.querySelector('#parksInfo').appendChild(error);
+            const pageHeight = window.innerHeight;
+            window.scrollBy(0, pageHeight);
         }
     })
     
@@ -57,11 +56,9 @@ parkApp.displayParks = function(parkDataArray) {
     hyperlink.innerText = "Get more information here";
     hyperlink.href = object.url;
 
-    //new div for info and map wrap
     const elementWrapper = document.createElement('div');
     elementWrapper.classList.add('elWrapper');
 
-    //new div for map
     const parkMap = document.createElement('div');
     parkMap.classList.add('map');
 
@@ -85,7 +82,6 @@ parkApp.displayParks = function(parkDataArray) {
     const imgContainerPark = document.createElement('div');
     imgContainerPark.classList.add('parkImgContainer');
 
-    //appending new elements
     elementWrapper.appendChild(parkInfo);
     elementWrapper.appendChild(parkMap);
 
