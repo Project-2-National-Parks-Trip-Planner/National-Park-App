@@ -474,16 +474,15 @@ footer {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  position: fixed;
   color: #2A1306;
   background-color: #FF9C08;
   width: 100%;
-  bottom: 0;
 }
 footer .footerText {
   font-size: 16px;
   color: #2A1306;
-  margin: 15px;
+  margin: 0;
+  padding: 10px;
 }
 footer .footerText a {
   text-decoration: none;
@@ -497,7 +496,7 @@ footer .footerText a {
     margin-bottom: 130px;
   }
 }
-@media (min-width: 600px) and (max-width: 869px) {
+@media (max-width: 869px) {
   header h3 {
     font-size: 25px;
     text-shadow: 2px 2px #FF9C08;
@@ -547,7 +546,6 @@ header form .secondSelection select {
 }
 .resultsBackground {
   background-color: lightyellow;
-  margin-bottom: 48px;
 }
 
 .wrapper {
@@ -702,7 +700,7 @@ header form .secondSelection select {
   border: 3px solid #FF9C08;
 }
 
-@media (min-width: 600px) and (max-width: 1000px) {
+@media (max-width: 1000px) {
   .elWrapper {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -714,7 +712,7 @@ header form .secondSelection select {
     width: 450px;
   }
 }
-@media (min-width: 450px) and (max-width: 599px) {
+@media (max-width: 599px) {
   .elWrapper {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -729,18 +727,14 @@ header form .secondSelection select {
     width: 390px;
   }
 }
-@media (min-width: 320px) and (max-width: 510px) {
-  .resultsBackground {
-    margin-bottom: 67px;
-  }
-
+@media (max-width: 510px) {
   .backToSearch {
     bottom: 75px;
     right: 13px;
     font-size: 10px;
   }
 }
-@media (min-width: 320px) and (max-width: 449px) {
+@media (max-width: 449px) {
   .elWrapper {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
